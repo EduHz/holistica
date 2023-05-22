@@ -1,0 +1,5 @@
+/* app height : Representa el largo de la pagina  */
+.app {
+    background-color: red;
+    height:2000px; 
+}
