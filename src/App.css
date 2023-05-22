@@ -1,5 +1,7 @@
 /* app height : Representa el largo de la pagina  */
 .app {
-    background-color: red;
+    background-color: rgb(211, 197, 224);
     height:2000px; 
 }
+
+@import 'bootstrap/dist/css/bootstrap.css';
