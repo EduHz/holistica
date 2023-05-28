@@ -46,13 +46,13 @@ const NavBar = () => {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#quien-soy">¿Quién soy?</NavLink>
+              <NavLink>¿Quién soy?</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#contacto">Contáctame</NavLink>
+              <NavLink>Cursos</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#acerca-de">Cursos</NavLink>
+              <NavLink>Contacto</NavLink>
             </NavItem>
           </Nav>
           <Nav className="d-none d-md-block" navbar>
