@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Collapse,
   Nav,
   NavItem,
