@@ -1,0 +1,14 @@
+.imagen-portada {
+    background-image: url('../images/suyayPortada.jpg');
+    background-size: cover;
+    min-height: 632px;
+    /* Otros estilos opcionales */
+  
+    /* Estilos para la vista de celular */
+    @media (max-width: 768px) {
+      background-size: contain;
+      background-position: center;
+      min-height: 300px;
+    }
+  }
+  
