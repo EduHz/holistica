@@ -78,7 +78,7 @@ const NavBar = () => {
                     width="50"
                   />
                 </DropdownToggle>
-                <DropdownMenu>
+                <DropdownMenu right className="dropdown-menu-right">
                   <DropdownItem header>{user.name}</DropdownItem>
                   <DropdownItem href="/profile">
                     <FontAwesomeIcon icon="user" className="mr-3" /> Profile
