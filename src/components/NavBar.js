@@ -64,7 +64,7 @@ const NavBar = () => {
                   className="btn-margin btn-sm"
                   onClick={() => loginWithRedirect()}
                 >
-                  Log in
+                  Registrarse
                 </Button>
               </NavItem>
             )}
@@ -129,7 +129,7 @@ const NavBar = () => {
               <NavItem>
                 <FontAwesomeIcon icon="power-off" className="mr-3" />
                 <NavLink href="#" id="qsLogoutBtn" onClick={logoutWithRedirect}>
-                  Log out
+                  Desconectarse
                 </NavLink>
               </NavItem>
             </Nav>
