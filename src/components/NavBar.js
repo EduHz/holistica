@@ -27,14 +27,23 @@ const NavBar = () => {
       returnTo: window.location.origin,
     });
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="nav-container">
-      <Navbar color="light" light expand="md">
+      <Navbar color="light" light expand="md" className="fixed-top navbar-sm">
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
+          <Nav className="mr-auto justify-content-center" navbar>
             <NavItem>
-              <NavLink href="#inicio">Holistica Suyay</NavLink>
+              <NavLink href="#inicio" onClick={scrollToTop}>
+                Holistica Suyay
+              </NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="#quien-soy">¿Quién soy?</NavLink>
@@ -52,7 +61,7 @@ const NavBar = () => {
                 <Button
                   id="qsLoginBtn"
                   color="primary"
-                  className="btn-margin"
+                  className="btn-margin btn-sm"
                   onClick={() => loginWithRedirect()}
                 >
                   Log in
