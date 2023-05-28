@@ -34,10 +34,7 @@ const NavBar = () => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink>Holistica Suyay</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#inicio">Inicio</NavLink>
+              <NavLink href="#inicio">Holistica Suyay</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="#quien-soy">¿Quién soy?</NavLink>
@@ -46,7 +43,7 @@ const NavBar = () => {
               <NavLink href="#contacto">Contáctame</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#acerca-de">Acerca de</NavLink>
+              <NavLink href="#acerca-de">Cursos</NavLink>
             </NavItem>
           </Nav>
           <Nav className="d-none d-md-block" navbar>
