@@ -16,6 +16,13 @@ import {
 import { useAuth0 } from "@auth0/auth0-react";
 import "bootstrap/dist/css/bootstrap.css";
 
+const scrollToSection = (position) => {
+  window.scrollTo({
+    top: position,
+    behavior: "smooth",
+  });
+};
+
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
@@ -28,11 +35,34 @@ const NavBar = () => {
     });
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    scrollToSection(0);
   };
+
+  const scrollToQuienSoy = () => {
+    scrollToSection(500);
+  };
+
+  const ProfileDropdown = () => (
+    <UncontrolledDropdown nav inNavbar>
+      <DropdownToggle nav caret id="profileDropDown">
+        <img
+          src={user.picture}
+          alt="Profile"
+          className="nav-user-profile rounded-circle"
+          width="50"
+        />
+      </DropdownToggle>
+      <DropdownMenu right className="dropdown-menu-right">
+        <DropdownItem header>{user.name}</DropdownItem>
+        <DropdownItem href="/profile">
+          <FontAwesomeIcon icon="user" className="mr-3" /> Profile
+        </DropdownItem>
+        <DropdownItem id="qsLogoutBtn" onClick={logoutWithRedirect}>
+          <FontAwesomeIcon icon="power-off" className="mr-3" /> Log out
+        </DropdownItem>
+      </DropdownMenu>
+    </UncontrolledDropdown>
+  );
 
   return (
     <div className="nav-container">
@@ -41,12 +71,10 @@ const NavBar = () => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto justify-content-center" navbar>
             <NavItem>
-              <NavLink href="#inicio" onClick={scrollToTop}>
-                Holistica Suyay
-              </NavLink>
+              <NavLink onClick={scrollToTop}>Holistica Suyay</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink>¿Quién soy?</NavLink>
+              <NavLink onClick={scrollToQuienSoy}>¿Quién soy?</NavLink>
             </NavItem>
             <NavItem>
               <NavLink>Cursos</NavLink>
@@ -68,28 +96,7 @@ const NavBar = () => {
                 </Button>
               </NavItem>
             )}
-            {isAuthenticated && (
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret id="profileDropDown">
-                  <img
-                    src={user.picture}
-                    alt="Profile"
-                    className="nav-user-profile rounded-circle"
-                    width="50"
-                  />
-                </DropdownToggle>
-                <DropdownMenu right className="dropdown-menu-right">
-                  <DropdownItem header>{user.name}</DropdownItem>
-                  <DropdownItem href="/profile">
-                    <FontAwesomeIcon icon="user" className="mr-3" /> Profile
-                  </DropdownItem>
-                  <DropdownItem id="qsLogoutBtn" onClick={logoutWithRedirect}>
-                    <FontAwesomeIcon icon="power-off" className="mr-3" /> Log
-                    out
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            )}
+            {isAuthenticated && <ProfileDropdown />}
           </Nav>
           {!isAuthenticated && (
             <Nav className="d-md-none" navbar>

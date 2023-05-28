@@ -1,14 +1,10 @@
 import React, { Fragment } from "react";
 import "./Home.css";
-import Hero from "../components/Hero";
 import Content from "../components/Content";
 
 const Home = () => (
   <Fragment>
-    <div className="imagen-portada">
-      <Hero />
-    </div>
-    <hr />
+    <div className="imagen-portada text-center my-5"></div>
     <Content />
   </Fragment>
 );
